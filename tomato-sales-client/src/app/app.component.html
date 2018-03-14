@@ -1,0 +1,17 @@
+<div>
+  {{ 'Size' | translate }}: <input class="form-control" [(ngModel)]="size">
+  <button (click)="onClickRefreshButton($event)">{{ 'Refresh' | translate }}</button>
+
+  <table class="table">
+    <tr>
+      <th>{{ 'Provider' | translate }}</th>
+      <th>{{ 'Tomatoes' | translate }}</th>
+      <th>{{ 'Sale date' | translate }}</th>
+    </tr>
+    <tr *ngFor="let user of users | async">
+      <td>{{user.provider}}</td>
+      <td>{{user.tomatoes}}</td>
+      <td>{{user.timestamp}}</td>
+    </tr>
+  </table>
+</div>
